@@ -6,6 +6,6 @@ import com.spring.codeblog.model.Post;
 
 //acesso aos meetodos save, delete e update
 
-public interface CodeBlogRepository extends  JpaRepository<Post, Long> {
+public interface CodeblogRepository extends  JpaRepository<Post, Long> {
 
 }
