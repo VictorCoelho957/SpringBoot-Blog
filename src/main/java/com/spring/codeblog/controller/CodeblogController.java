@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,4 +31,19 @@ public class CodeblogController {
         mv.addObject("posts", posts);
         return mv;
     }
+	
+	
+	/* buscar post por id*/
+		@GetMapping(value="/{id}")
+	    public ModelAndView getPostDetails(@PathVariable("id") long id){
+	        ModelAndView mv = new ModelAndView("postDetails"); //pagina html retornada
+	        Post post = codeblogService.findById(id);
+	        mv.addObject("post", post);
+	        return mv;
+	    }
+	
+	
+	
+	
+	
 }
